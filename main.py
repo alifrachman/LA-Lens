@@ -195,69 +195,109 @@ trn = Transaksi()
 def MenuAdmin():
     print("""
     ==Menu Admin== 
-    1. Melihat Data User
-    2. Menghapus Data User
-    3. Menambahkan Data User
-    4. Melihat Katalog Kamera
-    5. Menghapus Katalog Kamera
-    6. Menambahkan Katalog Kamera
-    7. Melihat Katalog Perlengkapan Kamera
-    8. Menghapus Katalog Perlengkapan Kamera
-    9. Menambahkan Katalog Perlengkapan Kamera
-    10. Melihat Katalog Perlengkapan Audio
-    11. Menghapus Katalog Perlenkapan Audio
-    12. Menambahkan Katalog Perlengkapan Audio
-    13. Melihat Katalog Perlengkapan Lighting
-    14. Mengahapus Katalog Perlenkapan Lighting
-    15. Menambahkan Katalog Perlengkapan Lighting
-    16. Melihat data transaksi
-    17. Menghapus data transaksi
-    18. Keluar
+    1. Data User
+    2. Katalog Kamera
+    3. Katalog Perlengkapan Kamera
+    4. Katalog Audio
+    5. Katalog Lighting
+    6. Melihat data transaksi
+    7. Menghapus data transaksi
+    8. Keluar
     """)
 
-    pilih = input("Pilih Menu : ")
-    if pilih == "1":
-        obj.LihatDataAll()
-    elif pilih == "2":
-        hapus = input('Masukkan email dari user yang akan dihapus: ')
-        obj.HapusUser(hapus)
-    elif pilih == "3":
-        obj.TambahUser()
-    elif pilih == "4":
-        kmr.LihatDataAll()
-    elif pilih == "5":
-        hapus = input('Masukkan id kamera yang akan dihapus: ')
-        kmr.HapusKamera(hapus)
-    elif pilih == "6":
-        kmr.TambahKamera()
-    elif pilih == "7":
-        eqp.LihatDataAll()
-    elif pilih == "8":
-        hapus = input('Masukkan id perlengkapan kamera yang akan dihapus: ')
-        eqp.HapusPerlengkapan(hapus)
-    elif pilih == "9":
-        eqp.TambahPerlengkapan()
-    elif pilih == "10":
-        aud.LihatDataAll()
-    elif pilih == "11":
-        hapus = input('Masukkan id audio yang akan dihapus: ')
-        aud.HapusAudio(hapus)
-    elif pilih == "12":
-        aud.TambahAudio()
-    elif pilih == "13":
-        lgh.LihatDataAll()
-    elif pilih == "14":
-        hapus = input('Masukkan id lighting yang akan dihapus: ')
-        lgh.HapusLighting(hapus)
-    elif pilih == "15":
-        lgh.TambahLighting()
-    elif pilih == "16":
+    pilihmenu = input("Pilih Menu : ")
+    if pilihmenu == "1":
+        print("""
+        1. Melihat Data User
+        2. Menghapus Data User
+        3. Menambahkan Data User
+        4. Kembali ke Menu Utama
+        """)
+        menu_user = input("Pilihan : ")
+        if menu_user == "1":
+            obj.LihatDataAll()
+        elif menu_user == "2":
+            hapus = input('Masukkan email dari user yang akan dihapus: ')
+            obj.HapusUser(hapus)
+        elif menu_user == "3":
+            obj.TambahUser()
+        elif menu_user == "4":
+            MenuAdmin()
+    elif pilihmenu == "2":
+        print("""
+        1. Melihat Katalog Kamera
+        2. Menghapus Katalog Kamera
+        3. Menambahkan Katalog Kamera
+        4. Kembali ke Menu Utama
+        """)
+        menu_kamera = input("Pilihan : ")
+        if menu_kamera == "1":
+            kmr.LihatDataAll()
+        elif menu_kamera == "2":
+            hapus = input('Masukkan id kamera yang akan dihapus: ')
+            kmr.HapusKamera(hapus)
+        elif menu_kamera == "3":
+            kmr.TambahKamera()
+        elif menu_kamera == "4":
+            MenuAdmin()
+    if pilihmenu == "3":
+        print("""
+        1. Melihat Katalog Perlengkapan Kamera
+        2. Menghapus Katalog Perlengkapan Kamera
+        3. Menambahkan Katalog Perlengkapan Kamera
+        4. Kembali ke Menu Utama
+        """)
+        menu_perlengkapan = input("Pilihan : ")
+        if menu_perlengkapan == "1":
+            eqp.LihatDataAll()
+        elif menu_perlengkapan == "2":
+            hapus = input('Masukkan id perlengkapan kamera yang akan dihapus: ')
+            eqp.HapusPerlengkapan(hapus)
+        elif menu_perlengkapan == "3":
+            eqp.TambahPerlengkapan()
+        elif menu_perlengkapan == "4":
+            MenuAdmin()
+    elif pilihmenu == "4":
+        print("""
+        1. Melihat Katalog Audio
+        2. Menghapus Katalog Audio
+        3. Menambahkan Katalog Audio
+        4. Kembali ke Menu Utama
+        """)
+        menu_audio = input("Pilihan : ")
+        if menu_audio == "1":
+            aud.LihatDataAll()
+        elif menu_audio == "2":
+            hapus = input('Masukkan id audio yang akan dihapus: ')
+            aud.HapusAudio(hapus)
+        elif menu_audio == "3":
+            aud.TambahAudio()
+        elif menu_audio == "4":
+            MenuAdmin()
+    elif pilihmenu == "5":
+        print("""
+        1. Melihat Katalog Lighting
+        2. Menghapus Katalog Lighting
+        3. Menambahkan Katalog Lighting
+        4. Kembali ke Menu Utama
+        """)
+        menu_lighting = input("Pilihan : ")
+        if menu_lighting == "1":
+            lgh.LihatDataAll()
+        elif menu_lighting == "2":
+            hapus = input('Masukkan id lighting yang akan dihapus: ')
+            lgh.HapusLighting(hapus)
+        elif menu_lighting == "3":
+            lgh.TambahLighting()
+        elif menu_lighting == "4":
+            MenuAdmin()
+    elif pilihmenu == "6":
         trn.LihatDataAll()
-    elif pilih == "17":
+    elif pilihmenu == "7":
         trn.LihatDataAll()
         hapus = input('Masukkan id transaksi yang akan dihapus: ')
         trn.HapusTransaksi(hapus)
-    elif pilih == "18":
+    elif pilihmenu == "8":
         exit()
 
 
@@ -343,14 +383,14 @@ def MenuUser():
 def Main():
     print("====SELAMAT DATANG DI RENTAL CAMERA LA LENS====")
     print("""
-    ===Login / Register===
-    1. Login
-    2. Register
+    ===Masuk / Daftar===
+    1. Masuk
+    2. Daftar
     (input 1 / 2)
     """)
     masuk = input("Masukkan pilihan : ")
     if masuk == "1":
-        email_admin = "la.lens@gmail.com"
+        kode_admin = "lalens123"
         print("""
         SIapakah anda ?
         1. Admin
@@ -358,9 +398,8 @@ def Main():
         """)
         status = input("Masukkan status anda (1 / 2) : ")
         if status =="1":
-            pastikan = input("Jika anda admin, masukkan email admin : ")
-            if pastikan == email_admin:
-
+            pastikan = input("Jika anda admin, masukkan kode admin : ")
+            if pastikan == kode_admin:
                 while True:
                     MenuAdmin()
             else:
