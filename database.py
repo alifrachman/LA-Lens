@@ -5,7 +5,6 @@ databaseName = "camera.db"
 conn = sqlite3.connect("camera.db")
 
 tabel = [
-    'CREATE TABLE IF NOT EXISTS "akun" ("nama" text NOT NULL,"email" text NOT NULL, "password" text NOT NULL, "Alamat" text NOT NULL, "No_Telp" INTEGER NOT NULL, PRIMARY KEY("email"))',
     'CREATE TABLE IF NOT EXISTS "katalog_camera" ("id_kamera" INTEGER NOT NULL,"merk" text NOT NULL, "type" text NOT NULL, "harga_perHari" INTEGER NOT NULL, PRIMARY KEY("id_kamera"))',
     'CREATE TABLE IF NOT EXISTS "katalog_perlengkapan" ("id_perlengkapan" INTEGER NOT NULL,"jenis" text NOT NULL, "harga_perHari" INTEGER NOT NULL, PRIMARY KEY("id_perlengkapan"))',
     'CREATE TABLE IF NOT EXISTS "katalog_audio" ("id_audio" INTEGER NOT NULL,"jenis" text NOT NULL, "harga_perHari" INTEGER NOT NULL, PRIMARY KEY("id_audio"))',
